@@ -27,5 +27,13 @@ export class DashboardComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+  /*
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }*/
 
 }

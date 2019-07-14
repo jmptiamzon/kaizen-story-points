@@ -1,1 +1,20 @@
-<p>configs works!</p>
+<h1>Config</h1>
+
+<div *ngFor="let item of test">
+  <p>{{item.FirstName}}</p>
+</div>
+
+<form class="form-signin" #fibonacciForm="ngForm" (ngSubmit)="setFibonacci(fibonacciForm.value)">
+<p>
+  <mat-form-field appearance="outline" style="width:400px !important">
+    <mat-label>Fibonacci Value</mat-label>
+    <input matInput id="fibVal" name="fibVal" #fibVal="ngModel" ngModel>
+  </mat-form-field>
+</p>
+<button type="submit" mat-raised-button color="primary" style="width:400px !important">Submit</button>
+</form>
+
+<input type="button" value="ok" (click)="sample()">
+
+
+

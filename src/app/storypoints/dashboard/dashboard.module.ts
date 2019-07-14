@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatPaginatorModule, MatSortModule, MatTableModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import 'hammerjs';
 
 const dashboardRoutes: Routes = [
@@ -20,6 +22,8 @@ const dashboardRoutes: Routes = [
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forChild(dashboardRoutes),
   ],
 
