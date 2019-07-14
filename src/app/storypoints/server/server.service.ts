@@ -18,6 +18,11 @@ export class ServerService {
     return this._http.post('http://localhost:3000/setFibonacci', formData, httpOptions);
   }
 
+  setDev(formData: any) {
+    let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this._http.post('http://localhost:3000/setDev', formData, httpOptions);
+  }
+
   getValues() {
     // tslint:disable-next-line: prefer-const
     let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };

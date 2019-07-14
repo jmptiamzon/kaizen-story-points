@@ -14,7 +14,27 @@
 <button type="submit" mat-raised-button color="primary" style="width:400px !important">Submit</button>
 </form>
 
-<input type="button" value="ok" (click)="sample()">
+<form class="form-signin" #newDevForm="ngForm" (ngSubmit)="setDev(newDevForm.value)">
+  <h1>Add Developer</h1>
+  <div class="">
+      <mat-form-field style="width:400px !important">
+        <input matInput placeholder="First Name" name="fname" id="fname" #fname="ngModel" ngModel>
+      </mat-form-field>
+  </div>
 
+  <div class="">
+      <mat-form-field style="width:400px !important">
+        <input matInput placeholder="Middle Name" name="mname" id="mname" #mname="ngModel" ngModel>
+      </mat-form-field>
+  </div>
+
+  <div class="">
+      <mat-form-field style="width:400px !important">
+        <input matInput placeholder="Last Name" name="lname" id="lname" #lname="ngModel" ngModel>
+      </mat-form-field>
+  </div>
+
+  <button type="submit" mat-raised-button color="primary" style="width:400px !important">Submit</button>
+  </form>
 
 

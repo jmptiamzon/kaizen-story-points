@@ -50,8 +50,31 @@ export class ConfigsComponent implements OnInit, OnDestroy {
       });
   }
 
-  sample() {
-    console.log('ok');
+  setDev(formData: any) {
+    console.log(formData)
+    // this.dataLoading = true;
+    this.querySubscription = this._backendService.setDev(formData).subscribe((res) => {
+      // tslint:disable-next-line: no-string-literal
+      if (res['errorCode'] > 0) {
+          this.error = false;
+          this.errorMessage = '';
+          this.dataLoading = false;
+          this.savedChanges = true;
+      } else {
+          this.error = true;
+          // tslint:disable-next-line: no-string-literal
+          this.errorMessage = res['errorMessage'];
+          this.dataLoading = false;
+      }
+    },
+      (error) => {
+          this.error = true;
+          this.errorMessage = error.message;
+          this.dataLoading = false;
+      },
+      () => {
+          this.dataLoading = false;
+      });
   }
 
   // tslint:disable-next-line: contextual-lifecycle
